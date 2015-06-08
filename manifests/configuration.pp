@@ -74,6 +74,6 @@ class firewalld::configuration (
     group   => root,
     mode    => '0640',
     require => Package['firewalld'], # make sure package is installed
-    notify  => Service['firewalld'], # restart service
+    notify  => Exec['firewalld::reload'], # reload service
   }
 }
